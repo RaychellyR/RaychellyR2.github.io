@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopdobico - Perfil da Empresa</title>
+    <style>
+         /* Reset de margens e preenchimentos */
+         body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para o cabeçalho e menu de navegação */
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold; /* Adicione negrito */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+            font-size: 14px; /* Tamanho da fonte */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+
+        .free-trial a {
+            background-color: #ff9900;
+            color: #000;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold; /* Adicione negrito */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+            font-size: 14px; /* Tamanho da fonte */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+        .free-trial a:hover {
+            background-color: #e68400;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos para a seção de perfil da empresa */
+        .perfil-empresa {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .capa-empresa {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .foto-perfil {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: -75px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilos para o menu de produtos */
+        .menu-produtos {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .menu-produtos a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-right: 1px solid #555;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-produtos a:last-child {
+            border-right: none;
+        }
+
+        .menu-produtos a:hover {
+            background-color: #ff9900;
+        }
+
+        /* Estilos adicionais */
+        .descricao-empresa {
+            margin-top: 20px;
+            text-align: left;
+            padding: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Estilos para o catálogo de produtos */
+        .catalogo-produtos {
+            display: flex;
+            flex-wrap: nowrap; /* Para evitar que os produtos quebrem para a próxima linha */
+            overflow-x: auto; /* Adicionar barra de rolagem horizontal se necessário */
+            padding: 20px;
+        }
+
+        .produto {
+            width: 300px; /* Largura fixa para cada produto */
+            margin-right: 20px; /* Espaçamento entre os produtos */
+            background-color: #f7f7f7;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .produto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .produto h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .produto p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .produto .preco {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff9900;
+        }
+
+        .produto .btn-comprar {
+            display: block;
+            background-color: #ff9900;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .produto .btn-comprar:hover {
+            background-color: #e68400;
+        }
+
+        /* Botões de Navegação */
+.botao-navegacao {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.botao-navegacao:hover {
+    background-color: #e68400;
+}
+
+
+        /* Adicione mais estilos conforme necessário */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="seu_caminho_para_a_logo.png" alt="Logo Shopdobico">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="busca.html">Busca</a></li>
+                <li><a href="planos.html">Planos</a></li>
+                <li><a href="duvidas.html">Dúvidas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="free-trial">
+            <a href="cadastro.html">Cadastrar Empresa</a>
+        </div>
+    </header>
+
+    <section class="perfil-empresa">
+        <img src="caminho_para_foto_de_capa.jpg" alt="Foto de Capa da Empresa" class="capa-empresa">
+        <img src="caminho_para_foto_de_perfil.jpg" alt="Foto de Perfil da Empresa" class="foto-perfil">
+        <div class="descricao-empresa">
+            <h2>Nome da Empresa</h2>
+            <p>Descrição da sua empresa. Aqui você pode adicionar informações sobre a empresa, seus produtos e serviços.</p>
+        </div>
+    </section>
+
+    <!-- Menu de Produtos -->
+    <div class="menu-produtos">
+        <a href="#">Produtos</a>
+        <a href="#">Serviços</a>
+        <a href="#">Promoções</a>
+        <!-- Adicione mais links conforme necessário -->
+    </div>
+
+    <!-- Catálogo de Produtos -->
+    <section class="catalogo-produtos">
+        <button id="anterior" class="botao-navegacao">Anterior</button>
+        <div class="produtos">
+            <img src="caminho_para_imagem_do_produto1.jpg" alt="Produto 1">
+            <h3>Nome do Produto 1</h3>
+            <p>Descrição do Produto 1.</p>
+            <p class="preco">R$ 99.99</p>
+            <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+
+          
+
+    </div>
+    <button id="proximo" class="botao-navegacao">Próximo</button>
+</section>
+
+    <!-- Resto do conteúdo da página aqui -->
+
+    <footer class="rodape">
+        <p>&copy; 2023 Minha Plataforma de Vendas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
+

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopdobico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         /* Reset de margens e preenchimentos */
+         body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para o cabeçalho e menu de navegação */
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold; /* Adicione negrito */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+            font-size: 14px; /* Tamanho da fonte */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+
+        .free-trial a {
+            background-color: #ff9900;
+            color: #000;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold; /* Adicione negrito */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+            font-size: 14px; /* Tamanho da fonte */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+        .free-trial a:hover {
+            background-color: #e68400;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-color: #ff9900;
+        }
+
+        
+
+       /* Estilos para a seção "Entre em Contato" */
+.contatos {
+    background-color: #fff; /* Alterado para branco */
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Restante do seu código CSS para a seção "Entre em Contato" */
+.contatos h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contato-item {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.contato-item a {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contato-item a:hover {
+    background-color: #e68400;
+    transform: scale(1.05);
+}
+
+.contato-item a:nth-child(1) {
+    background-color: #25d366; /* Cor do WhatsApp */
+}
+
+.contato-item a:nth-child(2) {
+    background-color: #1877f2; /* Cor do Facebook */
+}
+
+.contato-item a:nth-child(3) {
+    background-color: #e1306c; /* Cor do Instagram */
+}
+
+.contato-item a:nth-child(4) {
+    background-color: #faf9f9; /* Cor do E-mail */
+}
+.rodape {
+    padding: 20px;
+    background-color: #020000;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Adicionado para ocupar toda a largura */
+    position: absolute; /* Adicionado para fixar o rodapé no final da página */
+    bottom: 0; /* Alinha o rodapé no final da página */
+    left: 0; /* Alinha o rodapé no canto esquerdo */
+}
+
+.rodape p {
+    margin: 0;
+}
+         /* Estilos para a seção de busca */
+        .search-section {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .search-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .search-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            width: 350px;
+        }
+
+        #searchButton {
+            background-color: #ff9900;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #searchButton:hover {
+            background-color: #e68400;
+        }
+
+        .results {
+            margin-top: 20px;
+            /* Estilos para a área de resultados */
+        }
+
+        /* Estilos para a barra de loading */
+        .loading {
+            display: none;
+            width: 100%;
+            height: 12px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #ff9900;
+            z-index: 2;
+            animation: loadingAnimation 2s linear infinite; /* Aumentando a duração para 2 segundos */
+
+        }
+
+
+        /* Estilos para o divisor */
+        .divider {
+            border: none;
+            border-top: 1px solid #fffcfc;
+            margin: 40px 0;
+        }
+
+       /* Estilos para a seção de filtragem de preços */
+.filter-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.price-inputs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 0 10px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#filterButton {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#filterButton:hover {
+    background-color: #e68400;
+}
+
+    </style>
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const searchButton = document.getElementById("searchButton");
+        const loadingBar = document.querySelector(".loading");
+
+        searchButton.addEventListener("click", function () {
+            loadingBar.style.display = "block"; // Mostrar a barra de loading
+
+            // Simulação de uma busca (para fins de demonstração)
+            setTimeout(function () {
+                loadingBar.style.display = "none"; // Esconder a barra de loading
+                // Exibir resultados da busca (substitua este trecho pelo seu código real)
+                const resultsContainer = document.getElementById("results");
+                resultsContainer.innerHTML = "<p>Resultados da busca...</p>";
+            }, 2000); // Tempo simulado da busca em milissegundos
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    const minPriceInput = document.getElementById("minPrice");
+    const maxPriceInput = document.getElementById("maxPrice");
+    const filterButton = document.getElementById("filterButton");
+    const filteredProducts = document.getElementById("filteredProducts");
+
+    // Suponha que você tenha uma lista de produtos como a seguir
+    const products = [
+        { name: "Produto A", price: 10 },
+        { name: "Produto B", price: 20 },
+        { name: "Produto C", price: 30 },
+        // Adicione mais produtos conforme necessário
+    ];
+
+    filterButton.addEventListener("click", function () {
+        const minPrice = parseFloat(minPriceInput.value) || 0;
+        const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+
+        const filtered = products.filter(product => {
+            return product.price >= minPrice && product.price <= maxPrice;
+        });
+
+        displayFilteredResults(filtered);
+    });
+
+    function displayFilteredResults(filtered) {
+        filteredProducts.innerHTML = ""; // Limpa os resultados anteriores
+
+        if (filtered.length === 0) {
+            filteredProducts.innerHTML = "<p>Nenhum produto encontrado.</p>";
+            return;
+        }
+
+        filtered.forEach(product => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${product.name} - R$${product.price.toFixed(2)}`;
+            filteredProducts.appendChild(listItem);
+        });
+    }
+});
+</script>
+</head>
+
+</head>
+
+<body>
+    <header>
+
+        <div class="logo">
+            <img src="seu_caminho_para_a_logo.png" alt="Logo Shopdobico">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="busca.html">Busca</a></li>
+                <li><a href="planos.html">Planos</a></li>
+                <li><a href="duvidas.html">Dúvidas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="free-trial">
+            <a href="cadastro.html">Cadastrar Empresa</a>
+        </div>
+    </header>
+
+   
+    </header>
+    <main>
+    </div>
+    <h2 class="search-title">Buscar por Empresas, Produtos ou Serviços</h2>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Digite o nome da cidade, empresa ou produto">
+        <button id="searchButton">Buscar</button>
+    </div>
+    <div class="results" id="results">
+        <!-- Aqui serão exibidos os resultados da busca -->
+    </div>
+    <div class="loading"></div>
+</section>
+
+<section class="filter-section">
+    <h2>Filtrar por Preço</h2>
+    <div class="price-inputs">
+        <div class="input-group">
+            <label for="minPrice">Preço Mínimo:</label>
+            <input type="number" id="minPrice" placeholder="Preço mínimo">
+        </div>
+        <div class="input-group">
+            <label for="maxPrice">Preço Máximo:</label>
+            <input type="number" id="maxPrice" placeholder="Preço máximo">
+        </div>
+    </div>
+    <button id="filterButton">Filtrar</button>
+</section>
+       
+        <section class="contatos">
+            <h2>Entre em Contato</h2>
+            <div class="contato-item">
+                <a href="https://wa.me/seu_numero_whatsapp" target="_blank">WhatsApp</a>
+            </div>
+            <div class="contato-item">
+                <a href="https://www.facebook.com/seu_perfil_facebook" target="_blank">Facebook</a>
+            </div>
+            <div class="contato-item">
+                <a href="https://www.instagram.com/seu_perfil_instagram" target="_blank">Instagram</a>
+            </div>
+            <div class="contato-item">
+                <a href="mailto:seuemail@example.com">E-mail</a>
+            </div>
+        </section>
+
+    <footer class="rodape">
+        <p>&copy; 2023 Minha Plataforma de Vendas. Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>
